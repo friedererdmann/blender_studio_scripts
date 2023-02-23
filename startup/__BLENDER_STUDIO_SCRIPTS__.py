@@ -68,10 +68,6 @@ def add_addon_paths(base_paths: List[str]):
             addon_path = os.path.join(base_path, "addons")
             if os.path.exists(addon_path) and os.path.isdir(addon_path):
                 addon_paths.append(addon_path)
-        import _bpy
-        user_directory = os.path.join(_bpy.resource_path("USER"), 'scripts', 'addons')
-        if os.path.exists(user_directory) and os.path.isdir(user_directory):
-            addon_paths.append(user_directory)
         return addon_paths
 
     addon_utils.paths = patched_paths
